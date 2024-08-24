@@ -25,6 +25,13 @@
         <a class="dismiss">🗙</a>
     </div>
 
-    <script src="_framework/blazor.server.js"></script>
+    <script src="_framework/blazor.server.js" autostart="false"></script>
+    <script>
+        Blazor.start({
+            reconnectionHandler: {
+                onConnectionDown: () => location.href = "https://www.emojirequest.com/images/DeadEmoji.jpg", // Substitute for close()
+            }
+        });
+    </script>
 </body>
 </html>
